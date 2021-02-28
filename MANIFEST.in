@@ -1,0 +1,4 @@
+include zinobechallenge/schema.sql
+graft zinobechallenge/static
+graft zinobechallenge/templates
+global-exclude *.pyc
