@@ -2,6 +2,8 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 
+from zinobechallenge.db import get_db
+
 import requests, json
 import numpy as np
 import pandas as pd
@@ -66,7 +68,15 @@ def getallregions():
     statistics['min'] = df['Time [s]'].min().round(2)
     statistics['max'] = df['Time [s]'].max().round(2)
 
-    tables = [df.to_html(index = False, justify = 'center', classes='table',)]
+    table_html = [df.to_html(index = False, justify = 'center', classes='table',)]
 
-    return render_template('index.html', tables=tables, statistics=statistics)
+    db = get_db()
+
+    db.execute(
+        'INSERT INTO challenge_zinobe (total_time, mean_time, min_time, max_time) VALUES (?, ?, ?, ?)',
+        (statistics['total'], statistics['mean'], statistics['min'], statistics['max'])
+    )
+    db.commit()
+
+    return render_template('index.html', tables=table_html, statistics=statistics)
 

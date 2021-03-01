@@ -2,8 +2,8 @@ DROP TABLE IF EXISTS challenge_zinobe;
 
 CREATE TABLE challenge_zinobe (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  region TEXT NOT NULL,
-  city_name TEXT NOT NULL,
-  language TEXT NOT NULL,
-  time REAL NOT NULL
+  total_time REAL NOT NULL,
+  mean_time REAL NOT NULL,
+  min_time REAL NOT NULL,
+  max_time REAL NOT NULL
 );
