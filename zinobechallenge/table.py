@@ -78,5 +78,7 @@ def getallregions():
     )
     db.commit()
 
+    df.to_json(path_or_buf='data.json')
+
     return render_template('index.html', tables=table_html, statistics=statistics)
 
