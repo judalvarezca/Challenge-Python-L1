@@ -17,7 +17,7 @@ from zinobechallenge.db import get_db
 
 bp = Blueprint('table', __name__)
 
-@bp.route('/table', methods=('GET', 'POST'))
+@bp.route('/', methods=('GET', 'POST'))
 def getallregions():
     if request.method == 'POST':
         pass
