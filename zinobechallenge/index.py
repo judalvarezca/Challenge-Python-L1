@@ -15,7 +15,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 from zinobechallenge.db import get_db
 
-bp = Blueprint('table', __name__)
+bp = Blueprint('index', __name__)
 
 @bp.route('/', methods=('GET', 'POST'))
 def getallregions():
