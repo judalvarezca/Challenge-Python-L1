@@ -68,4 +68,4 @@ Se crea el dataframe, se computan las estadísticas solicitadas y se insertan lo
 
 ![zinobe_diagrama_flujo](https://user-images.githubusercontent.com/39559138/109479046-fcf34480-7a47-11eb-9d0b-5c531b734c3d.png)
 
-
+Por cuestiones de tiempo, no se alcanzó a realizar las pruebas unitarias.
