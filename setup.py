@@ -8,5 +8,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'flask',
+        'requests',
+        'pandas',
     ],
 )
